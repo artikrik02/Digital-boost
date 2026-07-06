@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>DIGITAL BOOST — маркетингова агенція</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0B0D10;
+      color: #E8EDF2;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(52, 152, 219, 0.15);
+      position: sticky;
+      top: 0;
+      background: rgba(11, 13, 16, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 50;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+    .logo span {
+      color: #3B9EFF;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 26px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav a {
+      color: #C8D2DC;
+      text-decoration: none;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+    .nav a:hover {
+      color: #3B9EFF;
+      border-bottom-color: #3B9EFF;
+    }
+
+    /* buttons */
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.25s ease;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: #3B9EFF;
+      color: #0B0D10;
+      box-shadow: 0 4px 12px rgba(59, 158, 255, 0.25);
+    }
+    .btn-primary:hover {
+      background: #5BAEFF;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(59, 158, 255, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #E8EDF2;
+      border: 1.5px solid #3B9EFF;
+    }
+    .btn-secondary:hover {
+      background: rgba(59, 158, 255, 0.08);
+      transform: translateY(-3px);
+      border-color: #5BAEFF;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 70px 0 60px;
+      text-align: left;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      max-width: 1000px;
+    }
+    .hero h1 span {
+      color: #3B9EFF;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #B0C4D9;
+      max-width: 780px;
+      margin: 28px 0 34px;
+      font-weight: 400;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    /* section headers */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      color: #B0C4D9;
+      margin-bottom: 40px;
+      max-width: 750px;
+    }
+
+    /* problems */
+    .problems {
+      padding: 70px 0 50px;
+    }
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin-top: 30px;
+    }
+    .problem-card {
+      background: #151A1F;
+      padding: 30px 22px;
+      border-radius: 20px;
+      border-left: 4px solid #3B9EFF;
+      transition: 0.2s;
+    }
+    .problem-card:hover {
+      background: #1C232A;
+      transform: translateY(-5px);
+    }
+    .problem-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #C8D2DC;
+    }
+    .problem-card h3 span {
+      color: #3B9EFF;
+    }
+    .problem-card p {
+      color: #A5B9CE;
+      font-size: 0.95rem;
+    }
+
+    .cta-text {
+      margin-top: 40px;
+      background: #131A20;
+      padding: 24px 28px;
+      border-radius: 30px;
+      border: 1px solid #25323B;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* why us */
+    .why-us {
+      padding: 60px 0;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+    .why-card {
+      background: #151A1F;
+      padding: 32px 24px;
+      border-radius: 24px;
+      transition: 0.2s;
+    }
+    .why-card:hover {
+      background: #1C232A;
+      transform: scale(1.01);
+    }
+    .why-card h4 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .why-card h4 span {
+      color: #3B9EFF;
+    }
+    .why-card p {
+      color: #A5B9CE;
+      font-size: 0.95rem;
+    }
+
+    /* stats */
+    .stats {
+      padding: 50px 0 60px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-item {
+      background: #0F1419;
+      padding: 30px 10px;
+      border-radius: 40px;
+      border: 1px solid #25323B;
+    }
+    .stat-item .number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #3B9EFF;
+    }
+    .stat-item .label {
+      font-size: 1rem;
+      color: #B0C4D9;
+      margin-top: 6px;
+    }
+
+    /* services */
+    .services {
+      padding: 60px 0 50px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: #151A1F;
+      border-radius: 28px;
+      padding: 32px 24px 28px;
+      transition: 0.2s;
+      border: 1px solid #1E2830;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      background: #1C232A;
+      transform: translateY(-6px);
+    }
+    .service-card h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .service-card .desc {
+      color: #B0C4D9;
+      font-size: 0.95rem;
+      margin: 8px 0 14px;
+    }
+    .service-card .price {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin: 10px 0 18px;
+      color: #3B9EFF;
+    }
+    .service-card .btn-primary, .service-card .btn-secondary {
+      width: 100%;
+      text-align: center;
+      padding: 12px 10px;
+      font-size: 0.95rem;
+    }
+
+    /* process */
+    .process {
+      padding: 60px 0;
+    }
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 24px;
+      justify-content: center;
+    }
+    .step {
+      background: #131A20;
+      padding: 18px 28px;
+      border-radius: 50px;
+      border: 1px solid #25323B;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .step .num {
+      background: #3B9EFF;
+      color: #0B0D10;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    /* team */
+    .team {
+      padding: 60px 0 50px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    .team-card {
+      background: #151A1F;
+      padding: 28px 20px;
+      border-radius: 30px;
+      text-align: center;
+      border: 1px solid #1E2830;
+    }
+    .team-card h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+    }
+    .team-card .role {
+      color: #3B9EFF;
+      font-weight: 500;
+      margin: 4px 0 8px;
+    }
+    .team-card .bio {
+      color: #A5B9CE;
+      font-size: 0.9rem;
+    }
+
+    /* contact cta */
+    .contact-cta {
+      padding: 70px 0 50px;
+    }
+    .cta-box {
+      background: #131A20;
+      padding: 48px 40px;
+      border-radius: 48px;
+      border: 1px solid #25323B;
+      text-align: center;
+    }
+    .cta-box h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .cta-box p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #B0C4D9;
+    }
+    .cta-box .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 1px solid #1E2830;
+      padding: 32px 0;
+      margin-top: 30px;
+      text-align: center;
+      color: #7A8D9F;
+      font-weight: 400;
+      font-size: 0.95rem;
+    }
+
+    /* responsive */
+    @media (max-width: 820px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav {
+        justify-content: center;
+        gap: 14px 18px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+      .cta-box {
+        padding: 32px 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      .nav {
+        gap: 10px 12px;
+        font-size: 0.85rem;
+      }
+      .hero {
+        padding-top: 40px;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .hero-buttons .btn-primary, .hero-buttons .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+      .step {
+        width: 100%;
+        justify-content: center;
+      }
+      .cta-box .btn-group .btn-primary, .cta-box .btn-group .btn-secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">DIGITAL <span>BOOST</span></div>
+    <nav class="nav">
+      <a href="#">Головна</a>
+      <a href="#">Проблеми</a>
+      <a href="#">Чому ми</a>
+      <a href="#">Послуги</a>
+      <a href="#">Наша команда</a>
+      <a href="#">Контакти</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="container hero">
+    <h1>DIGITAL BOOST. <span>Приведемо клієнтів</span> та ПІДВИЩимо продажі для вашого бізнесу</h1>
+    <p>Комплексна послуга з маркетингу реклами в пошукових системах і соцмережах. Ми розробляємо та супроводжуємо стратегію росту вашого бізнесу, використовуючи найефективніші інструменти digital-маркетингу.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn-primary">Отримати консультацію</a>
+      <a href="#" class="btn-secondary">Дізнатись ціну</a>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="problems container">
+    <h2 class="section-title">Знайомі проблеми вашого бізнесу?</h2>
+    <p class="section-sub">Багато власників бізнесу стикаються з однаковими викликами у просуванні своїх послуг та продуктів. Ви інвестуєте в рекламу, але не бачите очікуваного результату? Ваш сайт існує, але не приводить нових клієнтів?</p>
+    <div class="problems-grid">
+      <div class="problem-card"><h3>Сайт без <span>КЛІЄНТІВ</span></h3><p>Ви маєте власний сайт, але він не приводить клієнтів та не генерує продажі?</p></div>
+      <div class="problem-card"><h3>Неефективна <span>реклама</span></h3><p>Замовляєте рекламу, яка не дає очікуваного ефекту та з'їдає бюджет без результату?</p></div>
+      <div class="problem-card"><h3>Дослідження <span>без дії</span></h3><p>Зробили дороге маркетингове дослідження ринку, але не знаєте, як застосувати результати на практиці?</p></div>
+      <div class="problem-card"><h3>Відсутність <span>стратегії</span></h3><p>Шукаєте магічну пігулку, що вмить підвищить продажі та принесе стабільний потік клієнтів?</p></div>
+    </div>
+    <div class="cta-text">Досить марно витрачати гроші! Почніть співпрацю з агенцією фахівців Mad Lead Agency та отримайте вимірювані результати вже в перший місяць роботи.</div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us container">
+    <h2 class="section-title">Чому обирають <span style="color:#3B9EFF;">Digital Boost</span></h2>
+    <div class="why-grid">
+      <div class="why-card"><h4><span>Сертифікований</span> партнер Google</h4><p>Сертифікація з Google Ads — це офіційне підтвердження кваліфікації наших фахівців.</p></div>
+      <div class="why-card"><h4><span>Performance</span> маркетинг</h4><p>Робота з цільовою аудиторією, яка вже сформувала чітке уявлення своїх потреб.</p></div>
+      <div class="why-card"><h4><span>Таргетована</span> реклама</h4><p>Рекламні повідомлення бачать лише цільові люди.</p></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats container">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="number">7+</div><div class="label">Років досвіду</div></div>
+      <div class="stat-item"><div class="number">200+</div><div class="label">Успішних проектів</div></div>
+      <div class="stat-item"><div class="number">150%</div><div class="label">Середній ріст продажів</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services container">
+    <h2 class="section-title">ПОПУЛЯРНІ ПОСЛУГИ</h2>
+    <div class="services-grid">
+      <div class="service-card"><h4>Лідогенерація Facebook</h4><div class="desc">Залучення через Facebook та Instagram.</div><div class="price">від $500</div><a href="#" class="btn-primary">Замовити рекламну стратегію</a></div>
+      <div class="service-card"><h4>Лідогенерація Google</h4><div class="desc">Контекстна реклама Google Ads, YouTube реклама.</div><div class="price">від $500</div><a href="#" class="btn-primary">Замовити безкоштовний аудит</a></div>
+      <div class="service-card"><h4>Маркетинговий супровід бізнесу</h4><div class="desc">Комплексна підтримка, стратегія, аналітика.</div><div class="price">від $1000</div><a href="#" class="btn-primary">Замовити маркетингову стратегію</a></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process container">
+    <h2 class="section-title">Як працює наша співпраця <span style="color:#3B9EFF;">(Покроковий процес)</span></h2>
+    <div class="process-steps">
+      <div class="step"><span class="num">1</span> Аналіз та дослідження</div>
+      <div class="step"><span class="num">2</span> Розробка стратегії</div>
+      <div class="step"><span class="num">3</span> Прогнозування результатів</div>
+      <div class="step"><span class="num">4</span> Запуск кампаній</div>
+      <div class="step"><span class="num">5</span> Моніторинг та оптимізація</div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team container">
+    <h2 class="section-title">НАША КОМАНДА</h2>
+    <div class="team-grid">
+      <div class="team-card"><h4>Поліщук Наталія</h4><div class="role">PPC specialist</div><div class="bio">Сертифікований партнер Google</div></div>
+      <div class="team-card"><h4>Крикунова Надія</h4><div class="role">Marketing Director</div><div class="bio">Facebook targetologist</div></div>
+      <div class="team-card"><h4>Ковальова Олександра</h4><div class="role">Дизайнер</div><div class="bio">Створює продаючі креативи</div></div>
+      <div class="team-card"><h4>Софія</h4><div class="role">Контент-мейкер</div><div class="bio">Розробляє контент-стратегії</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta container">
+    <div class="cta-box">
+      <h2>Готові почати зростання вашого бізнесу?</h2>
+      <p>Що ви отримаєте на консультації: Аналіз поточної ситуації, Рекомендації щодо каналів, Оцінку бюджету.</p>
+      <div class="btn-group">
+        <a href="#" class="btn-primary">Отримати безкоштовну консультацію</a>
+        <a href="#" class="btn-secondary">Зателефонувати</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer container">
+  © 2026 Digital Boost. Всі права захищені.
+</footer>
+
+</body>
+</html>
